@@ -9,10 +9,11 @@ function Board(props) {
       <h1>BOARD {props.id} GOES HERE </h1>
       <table cellPadding="5" cellSpacing="0" align="center" border="1">
         <tbody>
-          {props.grid.map((x, xIdx) => {
-            console.log(x)
-            return <tr>{x.map((y, yIdx) => <Box xIdx={xIdx} yIdx={yIdx} />)}</tr>
-          }
+          {props.grid.map((row, rowIdx) => (
+            <tr>{row.map((col, colIdx) => (
+              <Box val={col} rowIdx={rowIdx} colIdx={colIdx} />
+            ))}</tr>
+          )
           )}
         </tbody>
       </table>
