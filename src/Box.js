@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 
-function Box() {
+function Box({xIdx, yIdx}) {
   return (
-    <td>x</td>
+    <td>x:{xIdx} y:{yIdx}</td>
   )
 }
 

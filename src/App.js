@@ -1,31 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Board from './Board';
-const BOARDWIDTH = 10;
-const BOARDHEIGHT = 10;
-let board1 = [
-  [0,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0,0,0,0]];
-  let board2 = [
-    [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0]];
+import Game from "./classes/battleship";
+
+const battleship = new Game();
+
 function App() {
+  const [game, setGame] = useState(battleship);
+  const [board1, setBoard1] = useState(game.board1);
+  const [board2, setBoard2] = useState(game.board2);
   return (
     <div className="App">
 
